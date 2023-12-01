@@ -1,10 +1,8 @@
 
 def main():
-    numbers = ['zero', 'one', 'two', 'three', 'four', 'five',
-               'six', 'seven', 'eight', 'nine']
     integers = []
     
-    with open('dec_1.txt') as f:
+    with open('input.txt') as f:
         data = f.read()
 
     lines = data.splitlines()
