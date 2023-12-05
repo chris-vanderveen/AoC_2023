@@ -1,12 +1,10 @@
 def main():
     p1 = 0
     p2 = 0
-    with open('day04/lotto.txt', 'r') as f:
+    with open('day04/input.txt', 'r') as f:
         data = f.read().splitlines()
 
     winning, numbers = parser(data)
-    print(winning)
-    print(numbers)
     p1 = calc_score(winning, numbers)
     p2 = calc_cards(winning, numbers)
 
@@ -44,19 +42,16 @@ def calc_score(winning, numbers):
 
     return score
 
-def calc_cards(winning, numbers, start=0):
-    if start >= len(winning):
-        return 0
+def calc_cards(winning: list, numbers: list):
+    copies = [1] * len(winning)
 
-    intersect = winning[start].intersection(numbers[start])
-    total_cards = 1  # count the current card
+    for i in range(len(winning)):
+        if i < len(winning) - 1:
+            intersection = len(winning[i].intersection(numbers[i]))
+            for j in range(1, intersection + 1):
+                if i + j < len(winning):
+                    copies[i + j] += copies[i]
 
-    for num in intersect:
-        num = int(num)
-        for i in range(1, num + 1):
-            if start + i < len(winning):
-                total_cards += calc_cards(winning, numbers, start + i)
-
-    return total_cards
+    return sum(copies)
 
 main()
