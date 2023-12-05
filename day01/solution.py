@@ -39,4 +39,5 @@ def first_last(line: str) -> int:
 
     return int(num)
 
-main()
+if __name__ == '__main__':
+    main()
