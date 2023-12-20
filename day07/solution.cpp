@@ -92,7 +92,7 @@ int card_value(char c) {
 	switch (c)
 	{
 	case 'T': return 10;
-	case 'J': return 1; // NOTE: This change makes part 1 wrong.
+	case 'J': return 1; // NOTE: This change makes part 1 wrong, Change it back to 11 to make Part 1 work again and vice versa.
 	case 'Q': return 12;
 	case 'K': return 13;
 	case 'A': return 14;
