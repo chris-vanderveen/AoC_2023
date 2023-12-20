@@ -11,8 +11,11 @@ Each day's puzzle will have its own directory, named `dayXX` where `XX` is the d
 
 ## Running the Solutions
 
-To run a solution, navigate to the day's directory and run the solution script with Python:
+To run a solution, navigate to the day's directory and run the solution script with Python or if C++, compile and run:
 
 ```bash
 cd day01
 python solution.py
+
+g++ solution.cpp 
+./a.out
